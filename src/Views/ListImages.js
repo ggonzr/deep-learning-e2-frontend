@@ -3,11 +3,12 @@
  */
 import React from "react";
 import {Button, Container} from "react-bootstrap";
+import getImages from "../Services/Images";
 
 // Listar las imagenes
 const ListImages = () => {
     // Acciones
-    const handleClick = (ev) => console.log("Hola")
+    const handleClick = (ev) => console.log(getImages(3));
 
     // Componente
     return (
