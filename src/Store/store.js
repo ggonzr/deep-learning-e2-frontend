@@ -29,10 +29,10 @@ const StateProvider = ( { children } ) => {
                     realMasks: true
                 }
             case CAMBIAR_IMAGENES:
-                const images = action.payload;
+                const newImages = action.payload;
                 return {
                     ...state,
-                    images: images
+                    images: newImages
                 }
             default:
                 throw new Error();

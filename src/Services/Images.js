@@ -1,7 +1,7 @@
 /**
  * Importar algunos archivos de máscaras
  */
-import TestSet from "./Assets/test_set.json";
+import TestSet from "./Assets/test_files.json";
 
 // URL base
 const urlBase = "https://storage.googleapis.com/frontend-dl-uniandes-entrega-2/test_thumbs";

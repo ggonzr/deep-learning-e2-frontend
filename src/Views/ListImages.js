@@ -6,6 +6,7 @@ import {Button, Container} from "react-bootstrap";
 import getImages from "../Services/Images";
 import { store } from '../Store/store.js';
 import {CAMBIAR_IMAGENES} from "../Store/actions";
+import ImageCard from "../Components/ImageCard";
 
 // Listar las imagenes
 const ListImages = () => {
@@ -16,20 +17,36 @@ const ListImages = () => {
 
     // Efecto: Cargar las nuevas imagenes en el state
     useEffect(() => {
+        console.log("List Images ejecutado");
         const event = {
             type: CAMBIAR_IMAGENES,
             payload: currentImages
         };
         dispatch(event);
-    }, [currentImages, dispatch]);
+    }, [currentImages]);
 
     // Acciones
     const handleClick = (ev) => {
         const imagesSample = getImages(6);
         // Dev
-        // console.log(imagesSample);
+        console.log(imagesSample);
         // Cambiar el estado del componente
         setCurrentImages(imagesSample);
+        // Cargarlo forzado en el context
+        /**
+        const event = {
+            type: CAMBIAR_IMAGENES,
+            payload: currentImages
+        };
+        dispatch(event);
+        */
+    };
+
+    // Otros renders
+    const renderImageCards = () => {
+        return currentImages.map((el, idx) => {
+            return <ImageCard imageData={el} key={idx}/>
+        });
     };
 
     // Componente
@@ -40,7 +57,8 @@ const ListImages = () => {
                 del modelo clasificando algunas imagenes del conjunto de prueba.
                 A continuación encontrará una pequeña muestra:
             </p>
-            <Button onClick={handleClick}>Click me</Button>
+            <Button onClick={handleClick}>Generar muestra</Button>
+            {renderImageCards()}
         </Container>
     );
 };
