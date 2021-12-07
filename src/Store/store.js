@@ -1,11 +1,14 @@
 // Store sencilla empleando React Hooks and React Context
 import React, {createContext, useReducer} from 'react';
-import {MOSTRAR, OCULTAR} from "./actions";
+import {MOSTRAR, OCULTAR, CAMBIAR_IMAGENES} from "./actions";
 
 // Estado inicial
 const initialState = {
     // Mostrar la máscara real
-    realMasks: false
+    realMasks: false,
+
+    // Arreglo con los datos
+    images: []
 };
 
 const store = createContext(initialState);
@@ -24,6 +27,12 @@ const StateProvider = ( { children } ) => {
                 return {
                     ...state,
                     realMasks: true
+                }
+            case CAMBIAR_IMAGENES:
+                const images = action.payload;
+                return {
+                    ...state,
+                    images: images
                 }
             default:
                 throw new Error();
