@@ -4,7 +4,7 @@
 import axios from "axios";
 
 // URL al backend
-const URL = "http://35.233.192.160:8000/predict"
+const URL = "http://34.145.78.153:8000/predict"
 
 // Realizar peticion POST
 // Retorna una promesa con la respuesta del backend
