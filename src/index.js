@@ -8,9 +8,9 @@ import {
 import App from "./App";
 import { StateProvider } from "./Store/store";
 import ImageDetail from "./Views/ImageDetail";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./Components/Navbar";
-
+import Footer from "./Components/Footer";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // Selector
 const root = document.getElementById("root");
@@ -25,6 +25,7 @@ const app = (
                 <Route path="/detail/:imageId" element={<ImageDetail />} />
             </Routes>
         </BrowserRouter>
+        <Footer />
     </StateProvider>
 );
 ReactDOM.render(app, root);

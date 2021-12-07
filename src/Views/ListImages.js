@@ -52,7 +52,7 @@ const ListImages = () => {
 
     // Componente
     return (
-        <Container>
+        <Container className="mb-5 mt-5">
             <p>
                 El objetivo de esta aplicación es mostrar el resultado
                 del modelo clasificando algunas imagenes del conjunto de prueba.
