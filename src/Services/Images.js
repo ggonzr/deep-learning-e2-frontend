@@ -1,7 +1,7 @@
 /**
  * Importar algunos archivos de máscaras
  */
-import TestSet from "./Assets/test_files.json";
+import TestSet from "./Assets/test_files_2.json";
 
 // URL base
 const urlBase = "https://storage.googleapis.com/frontend-dl-uniandes-entrega-2/test_thumbs";
@@ -9,8 +9,7 @@ const urlBase = "https://storage.googleapis.com/frontend-dl-uniandes-entrega-2/t
 // Mostrar la ruta de K imagenes
 const getImages = (numImages) => {
     // Obtener el indice
-    const imgIds = TestSet["image_id"];
-    let indexes = Object.keys(imgIds);
+    let indexes = Object.keys(TestSet);
 
     // Obtener una muestra
     const sampleList = [];
@@ -23,7 +22,7 @@ const getImages = (numImages) => {
     const urlImages = [];
     for (let idx of sampleList) {
         // ID de la imagen
-        const imgId = imgIds[idx];
+        const imgId = TestSet[idx];
         // Mascara
         const maskUrl = `${urlBase}/mask_${imgId}.png`;
         // RGB Base
