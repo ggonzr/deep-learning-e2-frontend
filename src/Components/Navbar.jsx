@@ -7,7 +7,7 @@ const CustomNavbar = () => {
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">{banner}</Navbar.Brand>
+                <Navbar.Brand href="/">{banner}</Navbar.Brand>
             </Container>
         </Navbar>
     );

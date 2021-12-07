@@ -2,7 +2,7 @@
  * Vista con las imagenes a mostrar
  */
 import React, {useContext, useEffect, useState} from "react";
-import {Button, Container} from "react-bootstrap";
+import {Button, Container, Row} from "react-bootstrap";
 import getImages from "../Services/Images";
 import { store } from '../Store/store.js';
 import {CAMBIAR_IMAGENES} from "../Store/actions";
@@ -17,7 +17,7 @@ const ListImages = () => {
 
     // Efecto: Cargar las nuevas imagenes en el state
     useEffect(() => {
-        console.log("List Images ejecutado");
+        //console.log("List Images ejecutado");
         const event = {
             type: CAMBIAR_IMAGENES,
             payload: currentImages
@@ -29,7 +29,8 @@ const ListImages = () => {
     const handleClick = (ev) => {
         const imagesSample = getImages(6);
         // Dev
-        console.log(imagesSample);
+        //console.log(imagesSample);
+
         // Cambiar el estado del componente
         setCurrentImages(imagesSample);
         // Cargarlo forzado en el context
@@ -45,7 +46,7 @@ const ListImages = () => {
     // Otros renders
     const renderImageCards = () => {
         return currentImages.map((el, idx) => {
-            return <ImageCard imageData={el} key={idx}/>
+            return <ImageCard imageData={el} imageId={idx} key={idx}/>
         });
     };
 
@@ -58,7 +59,9 @@ const ListImages = () => {
                 A continuación encontrará una pequeña muestra:
             </p>
             <Button onClick={handleClick}>Generar muestra</Button>
-            {renderImageCards()}
+            <Row className="mt-5">
+                {renderImageCards()}
+            </Row>
         </Container>
     );
 };

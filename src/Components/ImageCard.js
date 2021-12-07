@@ -1,11 +1,16 @@
 /**
  * Card para cada una de las imagenes de ejemplo
  */
-import React, {useContext} from "react";
-import { store } from "../Store/store";
+import React from "react";
 import {Button, Card} from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
-const ImageCard = ({ imageData }) => {
+const ImageCard = ({ imageData, imageId }) => {
+    let navigate = useNavigate();
+
+    // Acciones
+    const handleDetail = (ev) => {navigate("/detail/" + imageId)};
+
     // Componente
     return (
         <Card style={{ width: '18rem' }}>
@@ -15,7 +20,7 @@ const ImageCard = ({ imageData }) => {
                 <Card.Text>
                     Combinación TCI y máscara, imagen: {imageData.id}
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Button variant="primary" onClick={handleDetail}>Ver detalle</Button>
             </Card.Body>
         </Card>
     );

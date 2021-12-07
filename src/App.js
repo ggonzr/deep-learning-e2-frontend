@@ -6,7 +6,6 @@ import ListImages from "./Views/ListImages";
 const App = () => {
     return (
         <Container fluid>
-            <Navbar/>
             <ListImages />
         </Container>
     );
