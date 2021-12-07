@@ -14,7 +14,6 @@ const ImageDetail = () => {
 
     // Datos de este detalle
     const imageDetail = imageData[params.imageId]
-    console.log("Datos detail: ", imageDetail);
 
     return (
         <Container>
@@ -22,11 +21,11 @@ const ImageDetail = () => {
             <Row className="mt-3">
                 <Col>
                   <h3>Imagen TCI</h3>
-                  <img src={imageDetail.rgbUrl}/>
+                  <img src={imageDetail.rgbUrl} alt="Imagen TCI"/>
                 </Col>
                 <Col>
                     <h3>Máscara</h3>
-                    <img src={imageDetail.maskUrl}/>
+                    <img src={imageDetail.maskUrl} alt="Máscara de la imagen"/>
                 </Col>
             </Row>
         </Container>

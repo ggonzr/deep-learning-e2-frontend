@@ -23,7 +23,7 @@ const ListImages = () => {
             payload: currentImages
         };
         dispatch(event);
-    }, [currentImages]);
+    }, [currentImages, dispatch]);
 
     // Acciones
     const handleClick = (ev) => {
